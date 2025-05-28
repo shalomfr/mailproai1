@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  background-color: #f5f5f5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: right;
+  min-height: 100vh;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .MuiDrawer-paperAnchorLeft {
+  right: 0;
+  left: auto;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Status indicators */
+.status-connected {
+  color: #4caf50;
+}
+
+.status-disconnected {
+  color: #f44336;
+}
+
+.status-testing {
+  color: #ff9800;
+}
+
+.status-error {
+  color: #f44336;
+}
+
+/* Email suggestion dropdown */
+.email-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.email-suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.email-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.provider-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* Form enhancements */
+.form-section {
+  margin-bottom: 24px;
+}
+
+.form-section-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Connection status badge */
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.connection-badge.connected {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.connection-badge.disconnected {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.connection-badge.testing {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+/* Diagnostic results */
+.diagnostic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.diagnostic-item:last-child {
+  border-bottom: none;
+}
+
+.diagnostic-status {
+  font-weight: 500;
+}
+
+.diagnostic-status.passed {
+  color: #4caf50;
+}
+
+.diagnostic-status.failed {
+  color: #f44336;
+}
+
+.diagnostic-status.error {
+  color: #ff9800;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .email-suggestions {
+    font-size: 14px;
+  }
+  
+  .email-suggestion-item {
+    padding: 10px 12px;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Toast customization */
+.Toastify__toast-container--top-left {
+  top: 80px;
+}
+
+.Toastify__toast--rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 

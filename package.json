@@ -1,0 +1,36 @@
+{
+  "name": "email-config-manager",
+  "version": "1.0.0",
+  "description": "Email Configuration Management System - Vercel Deployment",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm ci && npm run build",
+    "start": "cd server && npm start",
+    "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
+    "client:dev": "cd client && npm run dev",
+    "server:dev": "cd server && npm run dev",
+    "vercel-build": "cd client && npm ci && npm run build"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "keywords": [
+    "email",
+    "configuration",
+    "imap",
+    "smtp",
+    "react",
+    "nodejs",
+    "vercel"
+  ],
+  "author": "Email Config Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+} 
