@@ -1,35 +1,25 @@
 {
   "version": 2,
   "name": "email-config-manager",
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    },
-    {
-      "src": "server/src/app.js",
-      "use": "@vercel/node"
+  "functions": {
+    "server/api/index.js": {
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/src/app.js"
+      "dest": "/server/api/index.js"
     },
     {
       "src": "/(.*)",
       "dest": "/client/build/$1"
     }
   ],
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/build",
+  "installCommand": "npm install && cd server && npm install && cd ../client && npm install",
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "server/src/app.js": {
-      "maxDuration": 30
-    }
   }
-} 
+}
